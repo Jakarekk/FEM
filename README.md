@@ -25,7 +25,7 @@ The solver handles transient time-dependent heat flow and accounts for convectio
 4.  **Time Iteration**: In every time step, the solver calculates the new temperature distribution based on the previous state and material properties.
 5.  **Output**: The program prints the simulation time and the minimum/maximum temperatures in the mesh for each step.
 
-## Input File Format (`dane2.txt`)
+## Input File Format (`dane.txt`)
 The program expects a specific text file format containing:
 *   `SimulationTime`, `TimeStep`
 *   `Conductivity`, `Alfa`, `Tot` (Ambient Temp), `InitialTemp`
@@ -37,43 +37,81 @@ The program expects a specific text file format containing:
 ## Example input file &  output
 
 SimulationTime 500
+
 SimulationStepTime 50
+
 Conductivity 25
+
 Alfa 300
+
 Tot 1200
+
 InitialTemp 100
+
 Density 7800
+
 SpecificHeat 700
+
 Nodes number 16
+
 Elements number 9
+
 *Node
+
       1,  0.100000001, 0.00499999989
+      
       2, 0.0666666701, 0.00499999989
+      
       3, 0.0333333351, 0.00499999989
+      
       4,           0., 0.00499999989
+      
       5,  0.100000001, -0.0283333343
+      
       6, 0.0666666701, -0.0283333343
+      
       7, 0.0333333351, -0.0283333343
+      
       8,           0., -0.0283333343
+      
       9,  0.100000001, -0.0616666675
+      
      10, 0.0666666701, -0.0616666675
+     
      11, 0.0333333351, -0.0616666675
+     
      12,           0., -0.0616666675
+     
      13,  0.100000001, -0.0949999988
+     
      14, 0.0666666701, -0.0949999988
+     
      15, 0.0333333351, -0.0949999988
+     
      16,           0., -0.0949999988
+     
 *Element, type=DC2D4
+
  1,  1,  2,  6,  5
+ 
  2,  2,  3,  7,  6
+ 
  3,  3,  4,  8,  7
+ 
  4,  5,  6, 10,  9
+ 
  5,  6,  7, 11, 10
+ 
  6,  7,  8, 12, 11
+ 
  7,  9, 10, 14, 13
+ 
  8, 10, 11, 15, 14
+ 
  9, 11, 12, 16, 15
+ 
 *BC
+
 1, 2, 3, 4, 5, 8, 9, 12, 13, 14, 15, 16
 
 <img width="428" height="186" alt="image" src="https://github.com/user-attachments/assets/4f36546c-2a5d-4ed4-bbb8-44aac4c817e5" />
